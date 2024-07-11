@@ -2,11 +2,14 @@
 
 const returnLenght = (string, maxLength) => string.length <= maxLength;
 
+returnLenght();
+
 // function 2
 
 const isPolyndrome = (string) => {
   string = string.replaceAll(' ', '').toLowerCase();
-  let reversedString = string.split('').reverse().join('');
+  const reversedString = string.split('').reverse().join('');
   return string === reversedString;
 }
 
+isPolyndrome();
