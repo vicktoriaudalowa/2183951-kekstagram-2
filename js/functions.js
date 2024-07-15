@@ -10,6 +10,6 @@ const isPolyndrome = (string) => {
   string = string.replaceAll(' ', '').toLowerCase();
   const reversedString = string.split('').reverse().join('');
   return string === reversedString;
-}
+};
 
 isPolyndrome();
