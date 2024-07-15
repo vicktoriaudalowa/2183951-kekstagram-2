@@ -1,8 +1,8 @@
 // function 1
 
-const returnLenght = (string, maxLength) => string.length <= maxLength;
+const checkStringLength = (string, maxLength) => string.length <= maxLength;
 
-returnLenght();
+checkStringLength();
 
 // function 2
 
