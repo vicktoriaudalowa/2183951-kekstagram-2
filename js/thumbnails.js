@@ -1,10 +1,17 @@
 import { similarUsers } from './data.js';
+import { findTemplate } from './dom.js';
+import { renderPack } from './dom.js';
 
-const template = document.querySelector('#picture').content.querySelector('.picture');
+/**@type {HTMLAnchorElement} **/
+const template = findTemplate('picture');
 const container = document.querySelector('.pictures');
 
 const createThumbnail = (photo) => {
+  /**@type {HTMLAnchorElement} **/
   const thumbnail = template.cloneNode(true);
+  thumbnail.href = photo.url;
+  thumbnail.dataset.id = photo.id;
+
   const image = thumbnail.querySelector('.picture__img');
   image.src = photo.url;
   image.alt = photo.description;
@@ -13,10 +20,5 @@ const createThumbnail = (photo) => {
   return thumbnail;
 };
 
-const fragment = document.createDocumentFragment();
-similarUsers.forEach((photo) => {
-  const thumbnail = createThumbnail(photo);
-  fragment.appendChild(thumbnail);
-});
-
-container.appendChild(fragment);
+renderPack(similarUsers, createThumbnail, container);
+export {container};
