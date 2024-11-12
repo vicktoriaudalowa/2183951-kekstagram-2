@@ -7,5 +7,7 @@ const container = document.querySelector('.pictures');
 
 container.addEventListener('click', (evt) => {
   const currentPictureNode = evt.target.closest('.picture');
-  openBigPicture(currentPictureNode.dataset.id);
+  if (currentPictureNode) {
+    openBigPicture(currentPictureNode.dataset.id);
+  }
 });
